@@ -6,11 +6,10 @@
 /*   By: mkarim <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 12:33:42 by mkarim            #+#    #+#             */
-/*   Updated: 2021/11/17 19:17:33 by mkarim           ###   ########.fr       */
+/*   Updated: 2021/11/19 10:22:06 by mkarim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/libft.h"
 #include "ft_printf.h"
 
 void	ft_print_s(char *s)
