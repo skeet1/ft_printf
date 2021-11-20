@@ -6,13 +6,13 @@
 /*   By: mkarim <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 12:01:58 by mkarim            #+#    #+#             */
-/*   Updated: 2021/11/19 10:20:35 by mkarim           ###   ########.fr       */
+/*   Updated: 2021/11/20 08:31:53 by mkarim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/libft.h"
+#include "ft_printf.h"
 
-void	ft_print_c(char c)
+void	ft_print_c(unsigned char c, int count)
 {
-	ft_putchar_fd(c, 1);
+	ft_putchar(c, count, 0);
 }

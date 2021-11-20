@@ -5,14 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkarim <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/17 11:41:00 by mkarim            #+#    #+#             */
-/*   Updated: 2021/11/17 11:44:13 by mkarim           ###   ########.fr       */
+/*   Created: 2021/11/19 11:27:20 by mkarim            #+#    #+#             */
+/*   Updated: 2021/11/20 07:07:14 by mkarim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_strlen(const char *s)
+int	ft_strlen(char *s)
 {
 	int		i;
 

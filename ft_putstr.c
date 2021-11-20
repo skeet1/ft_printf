@@ -6,17 +6,20 @@
 /*   By: mkarim <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 18:40:31 by mkarim            #+#    #+#             */
-/*   Updated: 2021/11/16 18:41:33 by mkarim           ###   ########.fr       */
+/*   Updated: 2021/11/20 08:32:50 by mkarim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_putstr(char *s)
+void	ft_putstr(char *s, int count)
 {
 	int		i;
 
 	i = 0;
 	while (s[i])
-		write(1, &s[i++], 1);
+	{
+		ft_putchar(s[i], count, 0);
+		i++;
+	}
 }

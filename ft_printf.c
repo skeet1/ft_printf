@@ -6,55 +6,36 @@
 /*   By: mkarim <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 17:04:58 by mkarim            #+#    #+#             */
-/*   Updated: 2021/11/19 08:54:34 by mkarim           ###   ########.fr       */
+/*   Updated: 2021/11/20 08:36:19 by mkarim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_putcharr(char c)
-{
-	write(1, &c, 1);
-}
-
 int	ft_printf(const char *fmt, ...)
 {
 	va_list	p;
-	int		len_fmt;
 	int		i;
+	int		count;
 
-	len_fmt = ft_strlen(fmt) - 1;
+	count = 0;
 	va_start(p, fmt);
 	i = 0;
-	while (fmt[i] && i < len_fmt)
+	while (fmt[i])
 	{
-		if (fmt[i] == '%' && fmt[i + 1] == 'd')
-			ft_print_d(va_arg(p, int));
-		if (fmt[i] == '%' && fmt[i + 1] == 'c')
-			ft_print_c(va_arg(p, int));
-		//if (fmt[i] == '%' && fmt[i + 1] == 'x')
-		//	ft_print_x(va_arg(p, int));
+		if (fmt[i] == '%' && (fmt[i + 1] == 'd' || fmt[i + 1] == 'i'))
+			ft_putnbr(va_arg(p, int), count);
+		if (fmt[i] == '%' && (fmt[i + 1] == 'c' || fmt[i + 1] == '%'))
+			ft_putchar(va_arg(p, int), count, fmt[i + 1] == '%');
 		if (fmt[i] == '%' && fmt[i + 1] == 'p')
-			ft_print_p(va_arg(p, char *));
+			ft_print_p(va_arg(p, long long), count);
+		if (fmt[i] == '%' && fmt[i + 1] == 'u')
+			ft_print_u(va_arg(p, unsigned int), count);
 		if (fmt[i] == '%' && fmt[i + 1] == 's')
-			ft_print_s(va_arg(p, char *));
-		if (fmt[i] == ' ' || fmt[i] == '\n' || fmt[i] == '\t' || fmt[i] == '-')
-			ft_putcharr(fmt[i]);
+			ft_putstr(va_arg(p, char *), count);
+		if (fmt[i] == '%' && (fmt[i + 1] == 'x' || fmt[i + 1] == 'X'))
+			ft_print_x(va_arg(p, int), count, (fmt[i + 1] == 'X'));
 		i++;
 	}
-	return (0);
-}
-
-int	main()
-{
-	int		a;
-
-	 a= 5;
-	 printf("%d - %p\n", a, &a);
-	 ft_printf("%d - %p\n", a, &a);
-	//ft_printf("%s", "  Hello world \n 1337\n");
-	//printf("%s", "  Hello world \n 1337\n");
-	//int	a= 7, b = 3;
-	//ft_printf("%d\n\t%d\n", a, b);
-	//printf("%d\n\t%d\n", a, b);
+	return (count);
 }
