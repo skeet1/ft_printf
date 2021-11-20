@@ -6,7 +6,7 @@
 /*   By: mkarim <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 18:07:03 by mkarim            #+#    #+#             */
-/*   Updated: 2021/11/20 08:35:49 by mkarim           ###   ########.fr       */
+/*   Updated: 2021/11/20 10:22:00 by mkarim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <stdarg.h>
 # include <unistd.h>
 
+int		ft_printf(const char *fmt, ...);
 void	ft_putchar(char c, int count, int prcnt);
 void	ft_print_d(int n, int count);
 void	ft_print_c(unsigned char c, int count);
