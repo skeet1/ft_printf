@@ -5,22 +5,25 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkarim <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/16 18:40:31 by mkarim            #+#    #+#             */
-/*   Updated: 2021/11/20 14:39:13 by mkarim           ###   ########.fr       */
+/*   Created: 2021/11/22 11:41:33 by mkarim            #+#    #+#             */
+/*   Updated: 2021/11/23 14:10:16 by mkarim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_putstr(char *s, int count)
+void	ft_putstr(char *s, int *count)
 {
 	int		i;
-
-	i = 0;
-	while (s[i])
+	if (s == NULL)
+		ft_putstr("(null)",count);
+	else
 	{
-		count = ft_putchar(s[i], count, 0);
-		i++;
+		i = 0;
+		while (s[i])
+		{
+			ft_putchar(s[i], count);
+			i++;
+		}
 	}
-	return (count);
 }
