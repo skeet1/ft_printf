@@ -6,7 +6,7 @@
 /*   By: mkarim <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 12:07:37 by mkarim            #+#    #+#             */
-/*   Updated: 2021/11/23 11:50:01 by mkarim           ###   ########.fr       */
+/*   Updated: 2021/11/25 14:11:31 by mkarim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,6 @@
 
 void	ft_print_x(unsigned long long n, int *count, int upper)
 {
-	char	low_x[] = "0123456789abcdef";
-	char	upp_x[] = "0123456789ABCDEF";
-
 	if (n < 0)
 		n *= -1;
 	if (n > 15)
@@ -27,8 +24,8 @@ void	ft_print_x(unsigned long long n, int *count, int upper)
 	else
 	{
 		if (upper)
-			ft_putchar(upp_x[n], count);
+			ft_putchar(UPP_X[n], count);
 		else
-			ft_putchar(low_x[n], count);
+			ft_putchar(LOW_X[n], count);
 	}
 }
